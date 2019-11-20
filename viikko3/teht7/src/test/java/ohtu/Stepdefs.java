@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import static org.junit.Assert.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
@@ -22,6 +22,7 @@ public class Stepdefs {
         WebElement element = driver.findElement(By.linkText("login"));
         element.click();
     }
+
     @Given("command new user is selected")
     public void newUserIsSelected() {
         driver.get(baseUrl);
@@ -62,7 +63,6 @@ public class Stepdefs {
         pageHasContent(message);
     }
 
-
     @Then("a new user is created")
     public void newUserWasCreated() {
         pageHasContent("Welcome to Ohtu Application");
@@ -78,11 +78,10 @@ public class Stepdefs {
         logInWith(username, password);
     }
 
-    @When("incorrect username {string} and password {string} are given") 
-        public void incorrectUsernameAndIncorrectPasswordAreGiven(String username, String password) {
+    @When("incorrect username {string} and password {string} are given")
+    public void incorrectUsernameAndIncorrectPasswordAreGiven(String username, String password) {
         logInWith(username, password);
     }
-    
 
     @When("nonexistent username {string} and incorrect password {string} are given")
     public void nonexistentUsernameAndIncorrectPasswordAreGiven(String username, String password) {
@@ -95,7 +94,8 @@ public class Stepdefs {
     }
 
     @When("a valid username {string} and a valid password {string} and confirmation {string} are given")
-    public void createNewUserWithValidUsernameAndDifferingValidPasswords(String username, String password, String confirmation) {
+    public void createNewUserWithValidUsernameAndDifferingValidPasswords(String username, String password,
+            String confirmation) {
         createNewWith(username, password, confirmation);
     }
 
@@ -104,8 +104,6 @@ public class Stepdefs {
         pageHasContent("invalid username or password");
         pageHasContent("Give your credentials to login");
     }
-
- 
 
     @After
     public void tearDown() {
