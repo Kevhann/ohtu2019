@@ -1,6 +1,3 @@
 # ohtu2019
 
-Muutos 1
-Muutos 2
-Muutos 3
-Muutos xxx poistamisen jälkeen
+[retrospektiivi](https://github.com/Kevhann/ohtu2019/blob/master/retro.md)
